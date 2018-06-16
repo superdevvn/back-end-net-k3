@@ -43,6 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IHello.cs" />
+    <Compile Include="Interfaces\IXuat.cs" />
+    <Compile Include="Interfaces\INhap.cs" />
     <Compile Include="Interfaces\IPerson.cs" />
     <Compile Include="Interfaces\IStaff.cs" />
     <Compile Include="Models\Manager.cs" />

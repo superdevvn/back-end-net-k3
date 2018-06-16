@@ -12,7 +12,7 @@ namespace _01_OOP
     {
         static void Main(string[] args)
         {
-            Demo2();
+            Demo3();
         }
 
         static void Demo1()
@@ -55,6 +55,31 @@ namespace _01_OOP
                 staff.Hello();
                 Console.WriteLine("--------------------------------");
             }
+        }
+
+        static void Demo3()
+        {
+            List<Employee> employees = new List<Employee>();
+            employees.Add(new Employee());
+            employees.Add(new Employee());
+            employees.Add(new Employee());
+            List<Manager> managers = new List<Manager>();
+            managers.Add(new Manager());
+            managers.Add(new Manager());
+
+            List<IStaff> staffs = new List<IStaff>();
+            staffs.AddRange(employees);
+            staffs.AddRange(managers);
+            List<INhap> nhaps = new List<INhap>();
+            nhaps.AddRange(employees);
+            nhaps.AddRange(managers);
+            List<IXuat> xuats = new List<IXuat>();
+            xuats.AddRange(employees);
+            xuats.AddRange(managers);
+
+            //Nhập dữ liệu
+            foreach (var staff in nhaps) staff.Nhap();
+            foreach (var staff in xuats) staff.Xuat();
         }
 
         static void Hello(IPerson person)
