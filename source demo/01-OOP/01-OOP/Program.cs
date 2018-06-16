@@ -12,7 +12,7 @@ namespace _01_OOP
     {
         static void Main(string[] args)
         {
-            Demo3();
+            Demo5();
         }
 
         static void Demo1()
@@ -80,6 +80,39 @@ namespace _01_OOP
             //Nhập dữ liệu
             foreach (var staff in nhaps) staff.Nhap();
             foreach (var staff in xuats) staff.Xuat();
+        }
+
+        static void Demo4()
+        {
+            List<Account> accounts = new List<Account>();
+            //accounts.Add(new Account()
+            //{
+            //    Username = "Account 1",
+            //    Password = "Password 1"
+            //});
+            accounts.Add(new User()
+            {
+                Username = "User 2",
+                Password = "Password 2",
+                Email = "user2@gmail.com"
+            });
+            accounts.Add(new Admin()
+            {
+                Username = "User 3",
+                Password = "Password 3",
+                Role = "MasterAdmin"
+            });
+
+            foreach(var account in accounts)
+            {
+                account.ShowInfo();
+            }
+        }
+
+        static void Demo5()
+        {
+            IVersion version = new Version2();
+            version.Hello();
         }
 
         static void Hello(IPerson person)

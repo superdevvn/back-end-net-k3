@@ -43,14 +43,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IHello.cs" />
+    <Compile Include="Interfaces\IVersion.cs" />
     <Compile Include="Interfaces\IXuat.cs" />
     <Compile Include="Interfaces\INhap.cs" />
     <Compile Include="Interfaces\IPerson.cs" />
     <Compile Include="Interfaces\IStaff.cs" />
+    <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Manager.cs" />
     <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\Teacher.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\Version2.cs" />
+    <Compile Include="Models\Version1.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

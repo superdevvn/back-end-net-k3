@@ -16,6 +16,7 @@ namespace _01_OOP.Models
         public double HeSoLuong { get; set; }
 
         public double LuongCoBan { get; set; }
+
         public double CalculateSalary()
         {
             return HeSoLuong * LuongCoBan;
