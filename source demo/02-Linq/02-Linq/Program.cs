@@ -12,7 +12,9 @@ namespace _02_Linq
         static void Main(string[] args)
         {
             Init();
-            Demo1();
+            //Demo1();
+            //Demo2();
+            Demo3();
         }
 
         static void Init()
@@ -105,6 +107,29 @@ namespace _02_Linq
             // Đếm số lượng sinh viên score > 10 và là nam
             var result4 = students.Count(student => student.Score > 10 || !student.IsMale);
             Console.WriteLine("Count Score or Female: " + result4);
+        }
+
+        static void Demo2()
+        {
+            var result = students.Where(student => student.IsMale).ToList();
+            foreach (var student in result)
+            {
+                Console.WriteLine("Code: " + student.Code);
+                Console.WriteLine("Name: " + student.Name);
+                Console.WriteLine("Score: " + student.Score);
+                Console.WriteLine("Gender: " + (student.IsMale ? "Male" : "Female"));
+                Console.WriteLine("Description: " + student.Description);
+                Console.WriteLine("------------------ ");
+            }
+        }
+
+        static void Demo3()
+        {
+            var result = students.Sum(student => student.Score);
+            Console.WriteLine("Total Score: " + result);
+            // Tổng score những sinh viên là nam
+            var result1 = students.Where(student => student.IsMale).Sum(student => student.Score);
+            Console.WriteLine("Total Male Score: " + result1);
         }
     }
 }
