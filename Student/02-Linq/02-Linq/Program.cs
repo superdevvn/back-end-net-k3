@@ -12,7 +12,7 @@ namespace _02_Linq
         static void Main(string[] args)
         {
             Init();
-            Demo1();
+
         }
 
         static void Init()
