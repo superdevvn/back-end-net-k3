@@ -53,6 +53,33 @@ namespace _02_Linq
                 Score = 15,
                 Description = "Student 4"
             });
+            students.Add(new Student()
+            {
+                Code = "005",
+                Name = "N5",
+                BirthDay = new DateTime(1997, 10, 11),
+                IsMale = true,
+                Score = 9,
+                Description = "Student 5"
+            });
+            students.Add(new Student()
+            {
+                Code = "006",
+                Name = "N6",
+                BirthDay = new DateTime(1997, 11, 20),
+                IsMale = false,
+                Score = 12,
+                Description = "Student 6"
+            });
+            students.Add(new Student()
+            {
+                Code = "007",
+                Name = "N7",
+                BirthDay = new DateTime(1997, 3, 2),
+                IsMale = true,
+                Score = 5,
+                Description = "Student 7"
+            });
         }
 
         static void Demo1()
@@ -66,6 +93,18 @@ namespace _02_Linq
             //});
             var result = students.Count(student => student.IsMale);
             Console.WriteLine("Count Male: " + result);
+
+            // Đếm số lượng sinh viên score > 10
+            var result2 = students.Count(student => student.Score > 10);
+            Console.WriteLine("Count Score: " + result2);
+
+            // Đếm số lượng sinh viên score > 10 và là nam
+            var result3 = students.Count(student => student.Score > 10 && student.IsMale);
+            Console.WriteLine("Count Score & Male: " + result3);
+
+            // Đếm số lượng sinh viên score > 10 và là nam
+            var result4 = students.Count(student => student.Score > 10 || !student.IsMale);
+            Console.WriteLine("Count Score or Female: " + result4);
         }
     }
 }
