@@ -19,7 +19,7 @@ namespace _02_Linq
             DayMoreThan10();
             AnyStudent();
             AllStudentScoreThan20();
-            MaxScore();
+          
             Console.ReadLine();
         }
 
@@ -167,10 +167,7 @@ namespace _02_Linq
                 Console.WriteLine("no");
         }
 
-        static void MaxScore()
-        {
-            var result = students.Max(student => student.Score);
-            Console.WriteLine("Max score is: " + result);
-        }
+       
+
     }
 }
