@@ -11,7 +11,10 @@ namespace Models.Common
     {
         public DbSet<Role> Roles { get; set; }
 
-        public SampleDbContext() : base("Data Source=DESKTOP-15KKVN2\\SQLEXPRESS;Initial Catalog=SampleCodeFirst;Integrated Security=True")
+        public DbSet<User> Users { get; set; }
+
+        public SampleDbContext()
+            : base("Data Source=DESKTOP-15KKVN2\\SQLEXPRESS;Initial Catalog=SampleCodeFirst;Integrated Security=True")
         { }
     }
 }
