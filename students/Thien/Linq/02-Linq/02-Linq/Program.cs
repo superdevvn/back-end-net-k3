@@ -12,15 +12,7 @@ namespace _02_Linq
         static void Main(string[] args)
         {
             Init();
-            ScoreMoreThan10();
-            MaleScoreMoreThan10();
-            MaleScoreMoreThan10();
-            SumScoreOfMale();
-            DayMoreThan10();
-            AnyStudent();
-            AllStudentScoreThan20();
-            MaxScore();
-            Console.ReadLine();
+
         }
 
         static void Init()
@@ -75,103 +67,5 @@ namespace _02_Linq
             var result = students.Count(student => student.IsMale);
             Console.WriteLine("Count Male: " + result);
         }
-
-        static void ScoreMoreThan10()
-        {
-            var result = students.Count(student =>
-            {
-                if (student.Score > 10)
-                    return true;
-                return false;
-            });
-            Console.WriteLine("Count student: " + result);
-            
-        }
-
-        static void MaleScoreMoreThan10()
-        {
-            var result = students.Count(student =>
-            {
-                if (student.Score > 10 && student.IsMale)
-                    return true;
-                return false;
-            });
-            Console.WriteLine("students have number more than 10: " + result);
-
-        }
-
-        static void ScoreMoreThan10OrFemale()
-        {
-            var result = students.Count(student =>
-            {
-                if (student.Score > 10 || student.IsMale==false)
-                    return true;
-                return false;
-            });
-            Console.WriteLine("Score more than 10 or Female: " + result);
-
-        }
-
-
-        //where
-        static void demo2()
-        {
-           
-            
-              var result = students.Where(student => student.Score > 10).ToList();
-               foreach (var student in result)
-               {
-                   Console.WriteLine("Code: {0}", student.Code);
-                   Console.WriteLine("Name: {1}", student.Name);
-                   Console.WriteLine("Birthday: {1}", student.BirthDay);
-                   
-                
-                }
-          
-           
-        }
-
-
-        static void SumScoreOfMale()
-        {
-            var resultArray = students.Where(student => student.IsMale).ToList();
-            var SumMale = resultArray.Sum(e => e.Score);
-            Console.WriteLine("Total score of males: {0}", SumMale);
-        }
-
-
-        static void DayMoreThan10()
-        {
-            var results = students.Where(student => student.BirthDay.Day > 10).Sum(student => student.Score);
-            Console.WriteLine("day >10: " + results);
-
-        }
-
-        static void AnyStudent()
-        {
-            bool scoreMoreThan20 = students.Any();
-            if (scoreMoreThan20)
-                Console.WriteLine("yes");
-            else
-                Console.WriteLine("no");
-
-        }
-
-        static void AllStudentScoreThan20()
-        {
-            bool allStudent = students.All(student => student.Score>20);
-
-            if (allStudent)
-                Console.WriteLine("yes");
-            else
-                Console.WriteLine("no");
-        }
-
-        static void MaxScore()
-        {
-            var result = students.Max(student => student.Score);
-            Console.WriteLine("Max score is: " + result);
-        }
-
     }
 }
