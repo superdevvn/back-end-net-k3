@@ -8,10 +8,12 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    public class Role
+    public class User
     {
         // guid uuid
         public Guid Id { get; set; }
+
+        public Guid RoleId { get; set; }
 
         [Index("IX_Code", IsUnique = true)]
         [StringLength(15)]
@@ -20,9 +22,7 @@ namespace Models
         [StringLength(50)]
         public string Name { get; set; }
 
-        public bool IsActived { get; set; }
-
-        [StringLength(1000)] // Attribute
-        public string Description { get; set; } // Property
+        [ForeignKey("RoleId")]
+        public virtual Role Role { get; set; }
     }
 }
